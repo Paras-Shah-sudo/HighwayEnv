@@ -12,7 +12,7 @@ from highway_env.vehicle.controller import MDPVehicle
 class TwoWayEnv(AbstractEnv):
 
     """
-    A risk management task: the agent is driving on a two-way lane with icoming traffic.
+    A risk management task: the agent is driving on a two-way lane with incoming traffic.
 
     It must balance making progress by overtaking and ensuring safety.
 
@@ -99,7 +99,7 @@ class TwoWayEnv(AbstractEnv):
         vehicles_type = utils.class_from_path(self.config["other_vehicles_type"])
         for i in range(3):
             self.road.vehicles.append(
-                vehicles_type(road,
+                vehicles_type(road, 
                               position=road.network.get_lane(("a", "b", 1))
                               .position(70+40*i + 10*self.np_random.normal(), 0),
                               heading=road.network.get_lane(("a", "b", 1)).heading_at(70+40*i),

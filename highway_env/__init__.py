@@ -101,3 +101,10 @@ def register_highway_envs():
         entry_point='highway_env.envs:UTurnEnv'
     )
 
+    # threeway_env.py
+    register(
+        id='threeway-v0',
+        entry_point='highway_env.envs:ThreeWayEnv',
+        max_episode_steps=10
+    )
+
